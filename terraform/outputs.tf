@@ -7,6 +7,10 @@ output "security_group_id" {
   value       = module.alb_security_group.security_group_id
 }
 
+output "alb_dns_name" {
+  value = module.alb.lb_dns_name
+}
+
 output "route53_zone_id" {
   description = "The ID of the Route53 hosted zone"
   value       = module.route53.zone_id

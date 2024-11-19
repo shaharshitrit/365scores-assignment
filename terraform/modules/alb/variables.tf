@@ -1,42 +1,24 @@
-# modules/alb/variables.tf
-
-variable "name" {
-  description = "The name of the ALB"
+variable "alb_name" {
+  description = "Name of the Application Load Balancer"
   type        = string
 }
 
 variable "vpc_id" {
-  description = "The VPC ID where the ALB will be deployed"
+  description = "VPC ID where the ALB will be deployed"
   type        = string
 }
 
 variable "subnets" {
-  description = "A list of subnets to associate with the ALB"
+  description = "List of subnets for the ALB"
   type        = list(string)
 }
 
 variable "security_groups" {
-  description = "A list of security group IDs to assign to the ALB"
+  description = "List of security groups for the ALB"
   type        = list(string)
 }
 
 variable "certificate_arn" {
-  description = "The ARN of the ACM certificate"
+  description = "ARN of the SSL certificate for HTTPS listener"
   type        = string
-}
-
-variable "environment" {
-  description = "Deployment environment (e.g., dev, staging, prod)"
-  type        = string
-}
-
-variable "project_name" {
-  description = "Name of the project"
-  type        = string
-}
-
-variable "target_group_name" {
-  description = "The name of the target group"
-  type        = string
-  default     = null
 }

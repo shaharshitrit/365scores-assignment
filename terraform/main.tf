@@ -11,32 +11,6 @@ module "vpc" {
 
 }
 
-module "alb" {
-  source = "./modules/alb"
-
-  name            = "${var.project_name}-alb"
-  vpc_id          = module.vpc.vpc_id
-  subnets         = module.vpc.public_subnets
-  security_groups = [module.alb_security_group.security_group_id]
-  certificate_arn = var.certificate_arn
-  environment     = var.environment
-  project_name    = var.project_name
-  target_group_name = "my-tg"
-}
-
-# Route53 Module
-module "route53" {
-  source = "./modules/route53"
-
-  domain_name  = var.domain_name
-  subdomain    = var.subdomain
-  alb_dns_name = module.alb.alb_dns_name
-
-  environment  = var.environment
-  project_name = var.project_name
-}
-
-
 module "alb_security_group" {
   source = "./modules/security_group"
 
@@ -85,5 +59,27 @@ module "alb_security_group" {
     "Environment" = var.environment
     "Project"     = var.project_name
   }
+}
+
+module "alb" {
+  source = "./modules/alb"
+
+  alb_name         = "${var.project_name}-alb"
+  vpc_id           = module.vpc.vpc_id
+  subnets          = module.vpc.public_subnets
+  security_groups  = [module.alb_security_group.security_group_id]
+  certificate_arn  = var.certificate_arn
+}
+
+# Route53 Module
+module "route53" {
+  source = "./modules/route53"
+
+  domain_name  = var.domain_name
+  subdomain    = var.subdomain
+  alb_dns_name = module.alb.lb_dns_name
+
+  environment  = var.environment
+  project_name = var.project_name
 }
 

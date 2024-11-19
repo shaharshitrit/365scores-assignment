@@ -9,11 +9,11 @@ vpc_name            = "365scores-vpc"
 project_name        = "365"
 
 ### Terraform vars to create the ALB ###
-certificate_arn     = "arn:aws:acm:eu-north-1:123456789012:certificate/abcdefg-1234-5678-abcd-1234567890ab"
+certificate_arn     = "arn:aws:acm:eu-north-1:194722398257:certificate/484cb8cf-5660-48e5-af42-d6369bd3af24"
 
 ### Terraform vars to create the Route53 records ###
 environment         = "dev"
-domain_name         = "example.com"  # Placeholder domain
+domain_name         = "shaharshitrit.com"  # Placeholder domain
 subdomain           = "www"
 
 ### Terraform vars to create the SG ###
