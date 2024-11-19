@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"alb","Source":"registry.terraform.io/terraform-aws-modules/alb/aws","Version":"9.12.0","Dir":".terraform/modules/alb"},{"Key":"security_group","Source":"../../modules/security_group","Dir":"../../modules/security_group"}]}
