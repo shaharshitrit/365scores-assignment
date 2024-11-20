@@ -1,0 +1,109 @@
+2024-11-20 16:06:54,238 - INFO - Found credentials in environment variables.
+2024-11-20 16:06:54,321 - INFO - Fetching resources in region eu-north-1...
+2024-11-20 16:06:58,021 - INFO - Fetching detailed resource information...
+
+Services used in region: eu-north-1
+  - ec2 (17 resources)
+  - elasticloadbalancing (4 resources)
+  - s3 (1 resources)
+  - iam (5 resources)
+  - route53 (1 resources)
+
+Detailed Resource Inventory:
+
+ELASTICLOADBALANCING Resources:
+  - ARN: arn:aws:elasticloadbalancing:eu-north-1:194722398257:loadbalancer/app/365-alb/1439104077c6b7c4
+    Type: loadbalancer
+    Tags: {'Name': '365-alb'}
+  - ARN: arn:aws:elasticloadbalancing:eu-north-1:194722398257:targetgroup/365-tg/5c494dc6366357d8
+    Type: targetgroup
+    Tags: {'Name': '365-tg'}
+  - ARN: arn:aws:elasticloadbalancing:eu-north-1:194722398257:listener/app/365-alb/1439104077c6b7c4/74500194c5897af7
+    Type: listener
+    Tags: {'Name': '365-alb'}
+  - ARN: arn:aws:elasticloadbalancing:eu-north-1:194722398257:listener/app/365-alb/1439104077c6b7c4/b97f6fad01507753
+    Type: listener
+    Tags: {'Name': '365-alb'}
+
+EC2 Resources:
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:route-table/rtb-01789879fd130f811
+    Type: route-table
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:route-table/rtb-0b80312d66e2eb63a
+    Type: route-table
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:route-table/rtb-0a58273cc12b17188
+    Type: route-table
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:security-group/sg-02632e9b987a32576
+    Type: security-group
+    Tags: {'Name': '365-alb'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:security-group/sg-03cd4864f55b47cf0
+    Type: security-group
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:security-group/sg-0f549efdd792a9ca2
+    Type: security-group
+    Tags: {'Project': '365', 'Environment': 'dev', 'Name': '365-alb-sg'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:subnet/subnet-0d8759cf5d3a31149
+    Type: subnet
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:natgateway/nat-0634cdd6cf45a6ece
+    Type: natgateway
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:vpc/vpc-007e3b09f3a5ac3b1
+    Type: vpc
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:internet-gateway/igw-0ecf10f128dcafc6b
+    Type: internet-gateway
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:natgateway/nat-095c65c56fa18240b
+    Type: natgateway
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:security-group/sg-08ad7f785bb7ec671
+    Type: security-group
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:subnet/subnet-0bfaca0cd5e5942b2
+    Type: subnet
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:elastic-ip/eipalloc-081b09f03dc079842
+    Type: elastic-ip
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:network-acl/acl-0d95878ac5e89dcac
+    Type: network-acl
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:subnet/subnet-0639fabe096a32d75
+    Type: subnet
+    Tags: {'Name': '365scores-vpc'}
+  - ARN: arn:aws:ec2:eu-north-1:194722398257:subnet/subnet-00df91d8902029e6a
+    Type: subnet
+    Tags: {'Name': '365scores-vpc'}
+
+S3 Resources:
+  - ARN: arn:aws:s3:::365scores-assignment-bucket
+    Type: bucket
+    Details: {'CreationDate': '2024-11-19T09:47:32+00:00', 'Region': 'eu-north-1'}
+
+ROUTE53 Resources:
+  - ARN: /hostedzone/Z02920042WKXSMMCTTZZ0
+    Type: hosted_zone
+    Details: {'Name': 'shaharshitrit.com.', 'CallerReference': 'terraform-20241120140012930700000005', 'Config': {'Comment': 'Managed by Terraform', 'PrivateZone': False}, 'ResourceRecordSetCount': 3, 'RecordSets': [{'Name': 'shaharshitrit.com.', 'Type': 'NS', 'TTL': 172800}, {'Name': 'shaharshitrit.com.', 'Type': 'SOA', 'TTL': 900}, {'Name': 'www.shaharshitrit.com.', 'Type': 'CNAME', 'TTL': 300}]}
+
+IAM Resources:
+  - ARN: arn:aws:iam::194722398257:user/shahar
+    Type: user
+    Details: {'UserId': 'AIDAS2VS4AAY3NQEZJINI', 'UserName': 'shahar', 'CreationDate': '2024-11-19T08:55:36+00:00'}
+    Tags: {'AKIAS2VS4AAYWRMINNGN': 'test'}
+  - ARN: arn:aws:iam::194722398257:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing
+    Type: role
+    Details: {'RoleId': 'AROAS2VS4AAYT3GQY3J23', 'RoleName': 'AWSServiceRoleForElasticLoadBalancing', 'CreationDate': '2024-11-19T12:09:41+00:00'}
+  - ARN: arn:aws:iam::194722398257:role/aws-service-role/globalaccelerator.amazonaws.com/AWSServiceRoleForGlobalAccelerator
+    Type: role
+    Details: {'RoleId': 'AROAS2VS4AAYZAJFAMY2L', 'RoleName': 'AWSServiceRoleForGlobalAccelerator', 'CreationDate': '2024-11-19T15:14:25+00:00'}
+  - ARN: arn:aws:iam::194722398257:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport
+    Type: role
+    Details: {'RoleId': 'AROAS2VS4AAYQ5AUKKEGH', 'RoleName': 'AWSServiceRoleForSupport', 'CreationDate': '2024-11-18T18:42:17+00:00'}
+  - ARN: arn:aws:iam::194722398257:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor
+    Type: role
+    Details: {'RoleId': 'AROAS2VS4AAYUGHFNQZMP', 'RoleName': 'AWSServiceRoleForTrustedAdvisor', 'CreationDate': '2024-11-18T18:42:17+00:00'}
+
+Process finished with exit code 0
