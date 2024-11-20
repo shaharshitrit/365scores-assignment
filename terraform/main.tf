@@ -81,5 +81,6 @@ module "route53" {
 
   environment  = var.environment
   project_name = var.project_name
+  depends_on = [module.alb]
 }
 
